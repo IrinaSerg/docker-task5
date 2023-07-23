@@ -1,0 +1,2 @@
+docker build -t webserver_nginx .
+docker-compose up -d

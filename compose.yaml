@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  webserver_nginx:
+    image: webserver_nginx
+    links:
+      - mariaDB
+    ports:
+      - 8080:8080
+
+  mariaDB:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 12345
+    ports:
+      - 3306:3306
